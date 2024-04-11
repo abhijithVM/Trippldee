@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:trippldee/view/common_widgets.dart/country_state_widget.dart';
 import 'package:trippldee/view/common_widgets.dart/display_username.dart';
+import 'package:trippldee/view/user_list_page.dart';
 
 import 'common_widgets.dart/dropdown_widget.dart';
 
@@ -30,6 +32,11 @@ class _HomePageState extends State<HomePage> {
               secondName: "VM",
               prefix: "Mr",
               suffix: "Thrissur",
+            ),
+            customGapFunction("Task 4"),
+            TextButton(
+              onPressed: () => Get.to(() => const UsersListPage()),
+              child: const Text("show Users List"),
             )
           ]),
         ),

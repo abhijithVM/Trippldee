@@ -19,8 +19,8 @@ class CountryStateDropdownState extends State<CountryStateDropdown> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         DropdownButton<String>(
           value: _selectedCountry,
