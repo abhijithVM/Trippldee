@@ -7,16 +7,8 @@ class ApiRepository {
 
   Future<List<User>> getUsersList() async {
     List<User>? usersList = [];
-   
-    final response = await client.get(
-      "https://reqres.in/api/users/{userId}",
-      // options: Options(
-      //   headers: {
-      //     'Content-Type': 'application/json',
-      //     'Accept': 'application/json',
-      //   },
-      // ),
-    );
+    int userID = 1;
+    final response = await client.get("https://reqres.in/api/users/$userID");
     debugPrint("test Users list *******$response");
     for (var element in (response.data['data'] as List)) {
       usersList.add(
