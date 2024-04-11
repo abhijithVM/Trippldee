@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:trippldee/view/common_widgets.dart/country_state_widget.dart';
 
 import 'common_widgets.dart/dropdown_widget.dart';
 
@@ -14,15 +15,12 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: SingleChildScrollView(
+      body: const SingleChildScrollView(
         child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: List.generate(
-              3, // here hardcoded the count as 3
-              (index) => const CustomDropdownWidget(),
-            ),
-          ),
+          child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+            CustomDropdownWidget(),
+            CountryStateDropdown(),
+          ]),
         ),
       ),
     );
