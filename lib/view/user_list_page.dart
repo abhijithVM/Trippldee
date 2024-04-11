@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/state_manager.dart';
 import 'package:trippldee/controller/user_controller.dart';
+import 'package:trippldee/model/user_model.dart';
 import 'package:trippldee/view/common_widgets.dart/display_username.dart';
+import 'package:trippldee/view/common_widgets.dart/user_display.dart';
 
 class UsersListPage extends StatelessWidget {
   const UsersListPage({super.key});
@@ -12,21 +14,20 @@ class UsersListPage extends StatelessWidget {
     return GetBuilder<UserListControler>(
       init: Get.put(UserListControler()),
       initState: (_) {},
-      builder: (movieListControler) {
+      builder: (userListControler) {
         return Scaffold(
           appBar: AppBar(),
           body: SingleChildScrollView(
             child: Column(
               children: [
-                movieListControler.isusersLoaded
+                userListControler.isusersLoaded
                     ? SizedBox(
                         height: MediaQuery.of(context).size.height * .9,
                         child: ListView.builder(
-                          itemCount: movieListControler.usersList?.length,
+                          itemCount: userListControler.usersList?.length,
                           itemBuilder: (BuildContext context, int index) {
-                            return const DisplayName(
-                              firstName: "",
-                              secondName: "",
+                            return  UserListTile(
+                             user: userListControler.usersList![index],
                             );
                           },
                         ),
