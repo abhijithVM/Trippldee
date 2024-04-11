@@ -27,7 +27,12 @@ class CountryStateDropdownState extends State<CountryStateDropdown> {
           onChanged: (String? newValue) {
             setState(() {
               _selectedCountry = newValue!;
-              _selectedState = 'KA';
+
+              // Check if the selected state is valid for the new country
+              if (!_stateMap[newValue]!.contains(_selectedState)) {
+                // If not valid, update selected state to the first state of the new country
+                _selectedState = _stateMap[newValue]!.first;
+              }
             });
           },
           items: ['IN', 'US', 'CA'].map((String country) {
