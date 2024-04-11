@@ -15,8 +15,14 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(),
       body: SingleChildScrollView(
-        child: Column(
-          children: List.generate(3, (index) => const CustomDropdownWidget()),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: List.generate(
+              3, // here hardcoded the count as 3
+              (index) => const CustomDropdownWidget(),
+            ),
+          ),
         ),
       ),
     );
