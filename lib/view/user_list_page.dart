@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/state_manager.dart';
 import 'package:trippldee/controller/user_controller.dart';
-import 'package:trippldee/model/user_model.dart';
-import 'package:trippldee/view/common_widgets.dart/display_username.dart';
 import 'package:trippldee/view/common_widgets.dart/user_display.dart';
 
 class UsersListPage extends StatelessWidget {
@@ -26,8 +23,8 @@ class UsersListPage extends StatelessWidget {
                         child: ListView.builder(
                           itemCount: userListControler.usersList?.length,
                           itemBuilder: (BuildContext context, int index) {
-                            return  UserListTile(
-                             user: userListControler.usersList![index],
+                            return ProfileInfo(
+                              user: userListControler.usersList![index],
                             );
                           },
                         ),
